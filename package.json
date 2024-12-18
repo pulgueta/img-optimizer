@@ -1,6 +1,7 @@
 {
   "name": "img-optimizer",
   "type": "module",
+  "version": "0.0.0",
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy --minify",
@@ -9,11 +10,16 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "hono": "^4.6.14"
+    "@cf-wasm/photon": "^0.1.28",
+    "@hono/zod-openapi": "^0.18.3",
+    "@scalar/hono-api-reference": "^0.5.165",
+    "hono": "^4.6.14",
+    "stoker": "^1.4.2",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@cloudflare/workers-types": "^4.20241216.0",
+    "@cloudflare/workers-types": "^4.20241218.0",
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
     "@commitlint/types": "^19.5.0",
@@ -24,5 +30,5 @@
     "semantic-release": "^24.2.0",
     "wrangler": "^3.97.0"
   },
-  "trustedDependencies": ["@biomejs/biome"]
+  "trustedDependencies": ["@biomejs/biome", "esbuild", "sharp", "workerd"]
 }

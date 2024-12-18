@@ -1,9 +1,12 @@
-import { Hono } from "hono";
+import { createApp } from "@/routes";
+import { imagesRouter } from "@/routes/image";
 
-const app = new Hono();
+const app = createApp();
 
-app.get("/", (c) => {
-  return c.text("Hello Hono!");
-});
+const routes = [imagesRouter] as const;
+
+for (const route of routes) {
+  app.route("/", route);
+}
 
 export default app;
